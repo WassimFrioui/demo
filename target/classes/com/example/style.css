@@ -1,0 +1,84 @@
+.progress-bar > .bar {
+    -fx-background-color: #D7C378;
+    -fx-background-radius: 0; 
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+.progress-bar > .track {
+    -fx-text-box-border:  #0B0B0B;
+    -fx-control-inner-background:  #0B0B0B;
+    -fx-background-color: #0B0B0B;
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0; 
+
+  }
+  .table-view {
+    -fx-background-color: #0B0B0B;
+    -fx-text-box-border:  #0B0B0B;
+    -fx-control-inner-background:  #0B0B0B;
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 0;
+    -fx-border-color: #d7c37d;
+    -fx-background-radius: 0; 
+  }
+
+    .table-view .column-header-background {
+        -fx-background-color: #161515;
+        -fx-text-box-border:  #0B0B0B;
+        -fx-control-inner-background:  #0B0B0B;
+        -fx-border-width: 0 0 1  0;
+        -fx-border-color: #d7c37d;
+
+        -fx-background-insets: 0 0 0 0;
+        -fx-padding: 10px;
+        -fx-background-radius: 0; 
+    }
+
+    .table-view .column-header {
+        -fx-background-color: transparent;
+        -fx-text-box-border:  #0B0B0B;
+        -fx-control-inner-background:  #0B0B0B;
+        -fx-background-insets: 0 5px 0 0;
+        -fx-padding: 0;
+        -fx-border-color: transparent;
+        -fx-background-radius: 0; 
+        -fx-alignment: center ;
+    }
+
+    .table-view .column-header .label {
+        -fx-text-fill: white;
+        -fx-font-weight: bold;
+
+    }
+    .table-view .table-row-cell {
+        -fx-border-color: transparent;
+        -fx-text-box-border:  #161515;
+        -fx-control-inner-background:  #0B0B0B;
+        -fx-background-insets: 0 0 0 0;
+        -fx-padding: 0;
+        -fx-background-radius: 0;
+        -fx-text-alignment: center;
+    }
+    .table-view .table-column {
+        -fx-border-color: transparent;
+        -fx-text-box-border:  #161515;
+        -fx-control-inner-background:  #0B0B0B;
+        -fx-background-insets: 0 0 0 0;
+        -fx-padding: 0;
+        -fx-background-radius: 0;
+        -fx-text-alignment: center;
+        -fx-alignment: BASELINE_CENTER;
+    }
+    .table-view .scroll-bar * {
+        -fx-min-width: 0;
+        -fx-pref-width: 0;
+        -fx-max-width: 0;
+    
+        -fx-min-height: 0;
+        -fx-pref-height: 0;
+        -fx-max-height: 0;
+    }

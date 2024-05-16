@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:controller="com.example.controllers.popup.Add_Button_Athletes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0B0B0B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" layoutX="100.0" prefHeight="200.0" prefWidth="300.0" spacing="25.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Text fx:id="text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Athletes">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="560.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="132.5" spacing="5.0">
+                     <children>
+                        <TextField fx:id="lastname" alignment="CENTER" promptText="Last Name" style="-fx-background-color: #181818; -fx-border-color: #d7c37d; -fx-border-width: 2;" />
+                        <TextField fx:id="age" alignment="CENTER" promptText="Age" style="-fx-background-color: #181818; -fx-border-color: #d7c37d; -fx-border-width: 2;" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="132.5" spacing="5.0">
+                     <children>
+                        <TextField fx:id="firstname" alignment="CENTER" promptText="First Name" style="-fx-background-color: #181818; -fx-border-color: #d7c37d; -fx-border-width: 2;" />
+                        <TextField fx:id="sex" alignment="CENTER" promptText="Sex" style="-fx-background-color: #181818; -fx-border-color: #d7c37d; -fx-border-width: 2;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <TextField fx:id="country" alignment="CENTER" maxWidth="290.0" promptText="Country" style="-fx-background-color: #181818; -fx-border-color: #d7c37d; -fx-border-width: 2;" />
+            <MenuButton fx:id="list_column" mnemonicParsing="false" prefHeight="26.0" prefWidth="290.0" style="-fx-background-color: transparent; -fx-border-color: #d7c37d; -fx-border-width: 2; -fx-border-radius: 0.5;" text="Disciplines" textFill="WHITE" />
+            <HBox alignment="CENTER" prefHeight="34.0" prefWidth="260.0" spacing="15.0">
+               <children>
+                  <Button fx:id="b_validate" mnemonicParsing="false" onAction="#B_Validate_Clck" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-border-color: #d7c37d; -fx-border-width: 2; -fx-border-radius: 0.5;" text="Validate" textFill="WHITE" />
+                  <Button fx:id="b_cancel" mnemonicParsing="false" onAction="#B_Cancel_Click" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: #d7c37d; -fx-border-color: #d7c37d; -fx-border-width: 2; -fx-border-radius: 0.5;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Text fx:id="error_text" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
