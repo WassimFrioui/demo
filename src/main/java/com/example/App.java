@@ -10,8 +10,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-import com.example.models.Athlete;
-import com.example.models.Discipline;
+import com.example.models.*;
 
 /**
  * JavaFX App

@@ -9,11 +9,11 @@ public class Athlete {
     private String lastName;
     private String firstName;
     private String country;
-    private char sex;
+    private Character sex;
     private Integer age;
     private List<Discipline> discipline;
 
-    public Athlete(Integer id, String lastName, String firstName, String country, char sex, Integer age,
+    public Athlete(Integer id, String lastName, String firstName, String country, Character sex, Integer age,
             List<Discipline> discipline) {
         this.id = id;
         this.lastName = lastName;
@@ -21,9 +21,13 @@ public class Athlete {
         this.country = country;
         this.sex = sex;
         this.age = age;
-        this.discipline = new ArrayList<>();
+        this.discipline = discipline != null ? discipline : new ArrayList<>();
     }
 
+    public Athlete(String firstName, String lastName, String ageText, String sexText, String countryText) {
+        this(null, lastName, firstName, countryText, sexText.charAt(0), Integer.parseInt(ageText), new ArrayList<>());
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -56,11 +60,11 @@ public class Athlete {
         this.country = country;
     }
 
-    public char getsex() {
+    public Character getSex() {
         return sex;
     }
 
-    public void setsex(char sex) {
+    public void setSex(Character sex) {
         this.sex = sex;
     }
 

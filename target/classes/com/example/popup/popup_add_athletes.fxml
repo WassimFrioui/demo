@@ -38,7 +38,7 @@
             <MenuButton fx:id="list_column" mnemonicParsing="false" prefHeight="26.0" prefWidth="290.0" style="-fx-background-color: transparent; -fx-border-color: #d7c37d; -fx-border-width: 2; -fx-border-radius: 0.5;" text="Disciplines" textFill="WHITE" />
             <HBox alignment="CENTER" prefHeight="34.0" prefWidth="260.0" spacing="15.0">
                <children>
-                  <Button fx:id="b_validate" mnemonicParsing="false" onAction="#B_Validate_Clck" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-border-color: #d7c37d; -fx-border-width: 2; -fx-border-radius: 0.5;" text="Validate" textFill="WHITE" />
+                  <Button fx:id="b_validate" mnemonicParsing="false" onAction="#B_Validate_Click" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-border-color: #d7c37d; -fx-border-width: 2; -fx-border-radius: 0.5;" text="Validate" textFill="WHITE" />
                   <Button fx:id="b_cancel" mnemonicParsing="false" onAction="#B_Cancel_Click" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: #d7c37d; -fx-border-color: #d7c37d; -fx-border-width: 2; -fx-border-radius: 0.5;" text="Cancel" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />

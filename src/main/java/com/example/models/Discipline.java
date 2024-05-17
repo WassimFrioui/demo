@@ -2,6 +2,9 @@ package com.example.models;
 
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Discipline {
 
     private Integer id;
@@ -36,6 +39,12 @@ public class Discipline {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public static ObservableList<Discipline> getDisciplines() {
+        ObservableList<Discipline> disciplines = FXCollections.observableArrayList();
+        disciplines.add(new Discipline(1, "Discipline 1", "Description 1"));
+        return disciplines;
     }
 
     @Override
