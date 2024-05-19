@@ -43,7 +43,6 @@ public class Discipline {
 
     public static ObservableList<Discipline> getDisciplines() {
         ObservableList<Discipline> disciplines = FXCollections.observableArrayList();
-        disciplines.add(new Discipline(1, "Discipline 1", "Description 1"));
         return disciplines;
     }
 

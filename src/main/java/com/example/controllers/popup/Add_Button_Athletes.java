@@ -70,15 +70,17 @@ public class Add_Button_Athletes {
         String ageText = age.getText();
         String sexText = sex.getText(); // Récupération du texte du champ de texte "sex"
         String countryText = country.getText();
+        firstname.setStyle("-fx-text-inner-color: white;");
         list_column.setText("Discipline");
 
         if (firstNameText.isEmpty() || lastNameText.isEmpty() || ageText.isEmpty() || sexText.isEmpty()
                 || countryText.isEmpty()) {
             error_text.setText("Please fill all the fields");
+            error_text.setStyle("-fx-fill: red;");
         } else {
             error_text.setText("");
             char sexChar = sexText.charAt(0); // Extraction du premier caractère pour le sexe de l'athlète
-            Athlete athlete = new Athlete(1, lastNameText, firstNameText, countryText, sexChar,
+            Athlete athlete = new Athlete(null, lastNameText, firstNameText, countryText, sexChar,
                     Integer.parseInt(ageText), null);
             Stage stage = (Stage) b_validate.getScene().getWindow();
             stage.setUserData(athlete);

@@ -82,3 +82,11 @@
         -fx-pref-height: 0;
         -fx-max-height: 0;
     }
+
+    .text-area {
+        text-area-background: #0B0B0B ;
+    }
+    
+    .text-area .content {
+        -fx-background-color: text-area-background ;
+    }
