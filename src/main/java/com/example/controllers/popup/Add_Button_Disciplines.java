@@ -1,13 +1,9 @@
 package com.example.controllers.popup;
 
-import com.example.models.Athlete;
 import com.example.models.Discipline;
-
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
