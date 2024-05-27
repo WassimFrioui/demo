@@ -109,6 +109,7 @@ public class Disciplines_table {
                             .observableArrayList(tableview_show.getItems());
                     Stage mainStage = (Stage) tableview_show.getScene().getWindow();
                     mainStage.setUserData(data_list_Disciplines);
+                    
                 }
             });
 

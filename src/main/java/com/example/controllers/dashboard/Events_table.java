@@ -1,14 +1,22 @@
 package com.example.controllers.dashboard;
 
+import com.example.App;
 import com.example.models.Discipline;
 import com.example.models.Event;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Events_table {
     @FXML
@@ -34,11 +42,6 @@ public class Events_table {
         title.setText("Disciplines");
         addColumnsToTableView(tableview_show, "Id", "Nom", "Description", "Active", "Discipline");
 
-        Event event1 = new Event(1, "Event 1", "Description 1", true, null);
-
-        tableview_show.getItems().add(event1);
-
-        
     }
 
     private void addColumnsToTableView(TableView<Event> tableView, String... columnNames) {
@@ -50,7 +53,19 @@ public class Events_table {
 
     @FXML
     void Add_Table_Clicked(ActionEvent event) {
-        System.err.println("Add Table Clicked");
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("popup/popup_add_events.fxml"));
+            AnchorPane root = (AnchorPane) fxmlLoader.load();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(App.class.getResource("style.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
