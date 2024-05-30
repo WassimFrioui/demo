@@ -43,6 +43,7 @@ public class Add_Button_Athletes {
 
     @FXML
     void initialize() {
+        error_text.setText("");
         // Récupérer la liste des disciplines
         ObservableList<Discipline> disciplines = Discipline.getDisciplines();
 

@@ -44,7 +44,7 @@ public class Events_table {
 
     @FXML
     public void initialize() {
-        title.setText("Disciplines");
+        title.setText("Events");
         addColumnsToTableView(tableview_show, "id", "name", "description", "active", "discipline");
 
         // Ajout d'un écouteur à la propriété de scène qui permet de récupérer les

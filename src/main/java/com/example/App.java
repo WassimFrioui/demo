@@ -10,8 +10,6 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-import com.example.models.*;
-
 /**
  * JavaFX App
  */

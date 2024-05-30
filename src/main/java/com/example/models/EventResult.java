@@ -10,9 +10,10 @@ public class EventResult {
     private List<Athlete> rankList;
     private List<Float> tempList;
     private List<String> scoreList;
+    private Event event;
 
     public EventResult(int id, String name, String description, String date, List<Athlete> rankList,
-            List<Float> tempList, List<String> scoreList) {
+            List<Float> tempList, List<String> scoreList, Event event) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -20,6 +21,7 @@ public class EventResult {
         this.rankList = rankList;
         this.tempList = tempList;
         this.scoreList = scoreList;
+        this.event = event;
     }
 
     public int getId() {
@@ -76,6 +78,14 @@ public class EventResult {
 
     public void setScoreList(List<String> scoreList) {
         this.scoreList = scoreList;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
     @Override
