@@ -145,6 +145,13 @@ public class Events_table {
             error_text.setText("Please select an event to delete");
             error_text.setStyle("-fx-fill: red;");
             System.out.println("error");
+            Timer timer = new Timer();
+            timer.schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    error_text.setText("");
+                }
+            }, 2000);
 
         }
     }
@@ -181,6 +188,13 @@ public class Events_table {
             error_text.setText("Please select an event to modify");
             error_text.setStyle("-fx-fill: red;");
             System.out.println("error");
+            Timer timer = new Timer();
+            timer.schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    error_text.setText("");
+                }
+            }, 2000);
         }
     }
 }

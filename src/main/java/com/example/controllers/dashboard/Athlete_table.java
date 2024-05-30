@@ -112,11 +112,56 @@ public class Athlete_table {
             error_text.setText("Please select an event to delete");
             error_text.setStyle("-fx-fill: red;");
             System.out.println("error");
+            Timer timer = new Timer();
+            timer.schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    error_text.setText("");
+                }
+            }, 2000);
 
         }
     }
 
     @FXML
     void Modify_Table_Clicked(ActionEvent event) {
+        Athlete selectedAthlete = tableview_show.getSelectionModel().getSelectedItem();
+        if (selectedAthlete != null) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("popup/popup_add_athletes.fxml"));
+                AnchorPane root = (AnchorPane) fxmlLoader.load();
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add(App.class.getResource("style.css").toExternalForm());
+                Stage stage = new Stage();
+                stage.initStyle(StageStyle.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
+                stage.setOnHidden(e -> {
+                    Athlete modifiedAthlete = (Athlete) stage.getUserData();
+                    if (modifiedAthlete != null) {
+                        int selectedIndex = tableview_show.getSelectionModel().getSelectedIndex();
+                        tableview_show.getItems().set(selectedIndex, modifiedAthlete);
+                        ObservableList<Athlete> data_list_Events = FXCollections
+                                .observableArrayList(tableview_show.getItems());
+                        Stage mainStage = (Stage) tableview_show.getScene().getWindow();
+                        mainStage.setUserData(data_list_Events);
+                        System.out.println("Event modified");
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            error_text.setText("Please select an event to modify");
+            error_text.setStyle("-fx-fill: red;");
+            System.out.println("error");
+            Timer timer = new Timer();
+            timer.schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    error_text.setText("");
+                }
+            }, 2000);
+        }
     }
 }
