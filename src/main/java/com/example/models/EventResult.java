@@ -70,7 +70,7 @@ public class EventResult {
         this.rankList = rankList;
     }
 
-    public void setTempList(List<Float  > tempList) {
+    public void setTempList(List<Float> tempList) {
         this.tempList = tempList;
     }
 

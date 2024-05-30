@@ -27,7 +27,7 @@ public class Athlete {
     public Athlete(String firstName, String lastName, String ageText, String sexText, String countryText) {
         this(null, lastName, firstName, countryText, sexText.charAt(0), Integer.parseInt(ageText), new ArrayList<>());
     }
-    
+
     public Integer getId() {
         return id;
     }
