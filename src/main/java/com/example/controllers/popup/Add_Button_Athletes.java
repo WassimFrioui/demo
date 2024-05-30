@@ -46,11 +46,10 @@ public class Add_Button_Athletes {
         // Récupérer la liste des disciplines
         ObservableList<Discipline> disciplines = Discipline.getDisciplines();
 
-        // Ajouter chaque discipline en tant que MenuItem au MenuButton
         for (Discipline discipline : disciplines) {
             MenuItem menuItem = new MenuItem(discipline.getName());
             menuItem.setOnAction(event -> {
-                // Définir le texte du MenuButton sur la discipline sélectionnée
+
                 list_column.setText(discipline.getName());
             });
             list_column.getItems().add(menuItem);
@@ -68,7 +67,7 @@ public class Add_Button_Athletes {
         String firstNameText = firstname.getText();
         String lastNameText = lastname.getText();
         String ageText = age.getText();
-        String sexText = sex.getText(); // Récupération du texte du champ de texte "sex"
+        String sexText = sex.getText();
         String countryText = country.getText();
         firstname.setStyle("-fx-text-inner-color: white;");
         list_column.setText("Discipline");
@@ -79,7 +78,7 @@ public class Add_Button_Athletes {
             error_text.setStyle("-fx-fill: red;");
         } else {
             error_text.setText("");
-            char sexChar = sexText.charAt(0); // Extraction du premier caractère pour le sexe de l'athlète
+            char sexChar = sexText.charAt(0);
             Athlete athlete = new Athlete(null, lastNameText, firstNameText, countryText, sexChar,
                     Integer.parseInt(ageText), null);
             Stage stage = (Stage) b_validate.getScene().getWindow();

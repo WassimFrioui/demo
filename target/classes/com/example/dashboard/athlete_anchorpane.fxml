@@ -28,15 +28,23 @@
          </center>
          <bottom>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button fx:id="page_1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D7C378;" text="1">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <cursor>
+            <children>
+               <Button fx:id="page_1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D7C378;" text="1">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                        <cursor>
                         <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
+                        </cursor>
+                     </Button>
+                     <Text fx:id="error_text" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Text>
                </children>
             </HBox>
          </bottom>

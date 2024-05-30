@@ -49,7 +49,7 @@ public class Add_Button_Events {
 
     @FXML
     void B_Validate_Click(ActionEvent event) {
-        if (name != null && description != null) { // Vérification si les champs ne sont pas nuls
+        if (name != null && description != null) {
             String nameText = name.getText();
             Boolean activeText = active.isSelected();
             String descriptionText = description.getText();

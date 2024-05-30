@@ -1,9 +1,11 @@
 package com.example.controllers.dashboard;
 
+import java.util.Timer;
+
 import com.example.App;
+import com.example.models.Athlete;
 import com.example.models.Discipline;
 
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -40,11 +42,15 @@ public class Disciplines_table {
     private Text title;
 
     @FXML
+    private Text error_text;
+
+    @FXML
     public void initialize() {
         title.setText("Disciplines");
         addColumnsToTableView(tableview_show, "Id", "Name", "Description");
 
-        // Ajouter un écouteur à la propriété de scène
+        // Ajout d'un écouteur à la propriété de scène qui nous permet de récupérer les
+        // données de la scène principale et de les afficher dans le tableau
         tableview_show.sceneProperty().addListener((observable, oldScene, newScene) -> {
             if (newScene != null) {
                 Stage stage = (Stage) newScene.getWindow();
@@ -69,7 +75,7 @@ public class Disciplines_table {
             try {
                 return (ObservableList<Discipline>) userData;
             } catch (ClassCastException e) {
-                System.err.println("UserData is not of type ObservableList<Discipline>");
+                System.err.println("Error");
             }
         }
         return null;
@@ -109,7 +115,7 @@ public class Disciplines_table {
                             .observableArrayList(tableview_show.getItems());
                     Stage mainStage = (Stage) tableview_show.getScene().getWindow();
                     mainStage.setUserData(data_list_Disciplines);
-                    
+
                 }
             });
 
@@ -120,11 +126,32 @@ public class Disciplines_table {
 
     @FXML
     void Delete_Table_Clicked(ActionEvent event) {
-        // Implementation for deleting selected item
+        Discipline selectedDiscipline = tableview_show.getSelectionModel().getSelectedItem();
+        if (selectedDiscipline != null) {
+            tableview_show.getItems().remove(selectedDiscipline);
+            ObservableList<Discipline> data_list_Disciplines = FXCollections
+                    .observableArrayList(tableview_show.getItems());
+            Stage mainStage = (Stage) tableview_show.getScene().getWindow();
+            mainStage.setUserData(data_list_Disciplines);
+            error_text.setText("Discipline deleted");
+            error_text.setStyle("-fx-fill: green;");
+            Timer timer = new Timer();
+            timer.schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    error_text.setText("");
+                }
+            }, 2000);
+        } else {
+            error_text.setText("Please select an event to delete");
+            error_text.setStyle("-fx-fill: red;");
+            System.out.println("error");
+
+        }
     }
 
     @FXML
     void Modify_Table_Clicked(ActionEvent event) {
-        // Implementation for modifying selected item
+
     }
 }

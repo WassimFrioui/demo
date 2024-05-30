@@ -1,9 +1,13 @@
 package com.example.controllers.dashboard;
 
+import java.util.Timer;
+
 import com.example.App;
 import com.example.models.*;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +42,9 @@ public class Athlete_table {
     private Text title;
 
     @FXML
+    private Text error_text;
+
+    @FXML
     public void initialize() {
         title.setText("Athletes");
         addColumnsToTableView(tableview_show, "Id", "LastName", "FirstName", "Country", "Sex", "Age", "Discipline");
@@ -47,21 +54,15 @@ public class Athlete_table {
         for (String columnName : columnNames) {
             TableColumn<Athlete, String> column = new TableColumn<>(columnName);
             if (columnName.equalsIgnoreCase("Sex")) {
-                // Utilisation d'une PropertyValueFactory personnalisée pour la colonne "Sex"
                 column.setCellValueFactory(cellData -> {
                     Athlete athlete = cellData.getValue();
                     return new SimpleStringProperty(String.valueOf(athlete.getSex()));
                 });
             } else if (columnName.equalsIgnoreCase("FirstName")) {
-                // Utilisation de PropertyValueFactory avec "firstName" pour la colonne
-                // "FirstName"
                 column.setCellValueFactory(new PropertyValueFactory<>("firstName"));
             } else if (columnName.equalsIgnoreCase("LastName")) {
-                // Utilisation de PropertyValueFactory avec "lastName" pour la colonne
-                // "LastName"
                 column.setCellValueFactory(new PropertyValueFactory<>("lastName"));
             } else {
-                // Utilisation de PropertyValueFactory pour les autres colonnes
                 column.setCellValueFactory(new PropertyValueFactory<>(columnName.toLowerCase()));
             }
             tableView.getColumns().add(column);
@@ -92,11 +93,30 @@ public class Athlete_table {
 
     @FXML
     void Delete_Table_Clicked(ActionEvent event) {
-        // Implementation for deleting selected item
+        Athlete selectedAthlete = tableview_show.getSelectionModel().getSelectedItem();
+        if (selectedAthlete != null) {
+            tableview_show.getItems().remove(selectedAthlete);
+            ObservableList<Athlete> data_list_Athletes = FXCollections.observableArrayList(tableview_show.getItems());
+            Stage mainStage = (Stage) tableview_show.getScene().getWindow();
+            mainStage.setUserData(data_list_Athletes);
+            error_text.setText("Athlete deleted");
+            error_text.setStyle("-fx-fill: green;");
+            Timer timer = new Timer();
+            timer.schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    error_text.setText("");
+                }
+            }, 2000);
+        } else {
+            error_text.setText("Please select an event to delete");
+            error_text.setStyle("-fx-fill: red;");
+            System.out.println("error");
+
+        }
     }
 
     @FXML
     void Modify_Table_Clicked(ActionEvent event) {
-        // Implementation for modifying selected item
     }
 }
