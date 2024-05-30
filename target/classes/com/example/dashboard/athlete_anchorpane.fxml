@@ -27,7 +27,7 @@
             </TableView>
          </center>
          <bottom>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" BorderPane.alignment="CENTER">
             <children>
                <Button fx:id="page_1" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D7C378;" text="1">
                         <font>
@@ -39,14 +39,14 @@
                      </Button>
                      <Text fx:id="error_text" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="">
                      <VBox.margin>
-                        <Insets bottom="20.0" />
+                        <Insets bottom="5.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Arial Bold" size="12.0" />
                      </font>
                   </Text>
                </children>
-            </HBox>
+            </VBox>
          </bottom>
          <top>
             <VBox prefHeight="98.0" prefWidth="960.0" BorderPane.alignment="CENTER">
