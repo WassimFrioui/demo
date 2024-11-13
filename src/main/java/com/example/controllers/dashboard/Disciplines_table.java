@@ -174,10 +174,10 @@ public class Disciplines_table {
                     if (modifiedDiscipline != null) {
                         int selectedIndex = tableview_show.getSelectionModel().getSelectedIndex();
                         tableview_show.getItems().set(selectedIndex, modifiedDiscipline);
-                        ObservableList<Discipline> data_list_Events = FXCollections
+                        ObservableList<Discipline> data_list_Disciplines = FXCollections
                                 .observableArrayList(tableview_show.getItems());
                         Stage mainStage = (Stage) tableview_show.getScene().getWindow();
-                        mainStage.setUserData(data_list_Events);
+                        mainStage.setUserData(data_list_Disciplines);
                         System.out.println("Event modified");
                     }
                 });
